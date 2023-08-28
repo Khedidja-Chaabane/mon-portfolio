@@ -1,0 +1,184 @@
+body{
+  margin: 0 auto;
+  padding: 10px;
+}
+main{
+  margin: 0 auto;
+  background-color:gainsboro;
+  padding: 10px;
+}
+.navbar{
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; /* Couleur de fond de votre navbar */
+  z-index: 100; /* Assurez-vous qu'elle est au-dessus des autres éléments */
+
+}
+/* Styles de base pour l'en-tête */
+header {
+  margin: 20px 0px 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Aligner les éléments verticalement au centre */
+}
+
+/* Styles pour la vidéo */
+header .header-video {
+  flex: 1;
+  max-width: 80%; /* Ajuster la valeur pour la largeur maximale désirée */
+  margin: 0 auto; /* Centrer la vidéo horizontalement */
+  position: relative;
+  /* border: 2px solid #ccc; Supprimer la bordure */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Supprimer l'ombre */
+  border-radius: 20px;
+}
+.header-video video{
+  box-shadow: 3px 2px 3px gray;
+
+}
+
+
+/* Styles pour le texte dans l'en-tête */
+.header-text {
+  flex: 1; /* Le texte prendra autant d'espace que possible */
+  padding: 0 20px; /* Espacement autour du texte */
+  margin: 0 20px;
+}
+h1{
+  font-family:serif;
+  color: darkred;
+}
+.header-text img{
+  height: 150px;
+  width:150px;
+  border-bottom-right-radius: 30px;
+}
+.header-text h4{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.header-text p{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Media Query pour les écrans de taille moyenne (par exemple, tablettes) */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column; /* Afficher les éléments en colonne pour les petits écrans */
+  }
+  
+  header video {
+    max-width: 100%; /* La vidéo occupe toute la largeur de l'écran */
+    height: auto; /* Ajuster la hauteur de la vidéo proportionnellement */
+  }
+  
+  .header-text {
+    padding: 20px 0; /* Espacement adapté pour les petits écrans */
+  }
+}
+/* Définition de l'animation */
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0; /* Début et fin de l'animation avec une opacité de 0 */
+  }
+  50% {
+    opacity: 1; /* Point médian avec une opacité de 1 (visible) */
+  }
+}
+
+/* Appliquer l'animation à l'élément cible */
+.animate-fade-in-out {
+  animation: fade-in-out 6s linear infinite; /* Appliquer l'animation infinie sur une durée de 6 secondes */
+}
+
+
+.competences {
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  padding:15px ;
+    display: flex;
+    flex-wrap: wrap;
+justify-content: space-between;
+  }
+  
+  .competences img {
+    width: 80px; 
+    height: 100px;
+  }
+  .competences h3{
+    color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .competences h5{
+    font-family: cursive;
+  }
+  /* PROJETS */
+  .projets{
+    background-color:rgb(242, 239, 234);
+    box-shadow: 2px 3px 5px beige;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    padding:15px ;
+  justify-content: space-between;
+  } 
+  .projets h3{
+    color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+
+  }
+/* EXPERIENCES */
+.experiences{
+  margin: 20px 20px 20px;
+  padding:20px;
+  line-height: 30px;
+  background-color:beige;
+}
+.experiences h3{
+  color: blue;
+}
+/* Formations */
+.formations section{
+  margin: 10px 20px 20px;
+  padding:20px;
+  background-color:bisque;
+
+}
+.formations h3{
+  color: blue;
+}
+.formations li{
+  border: 1px solid;
+}
+  /* CONTACT */
+  /* Centrer l'iframe */
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Occuper toute la hauteur de la vue */
+}
+
+/* Rendre l'iframe responsif */
+.iframe-container iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+/* Styliser les icônes sociales */
+.social-icons {
+  display: flex;
+  gap: 20px; /* Espacement entre les icônes */
+  justify-content: center; /* Centrer horizontalement */
+  margin-top: 20px;
+}
+
+.social-icons a img {
+  width: 30px; /* Ajuster la largeur de l'icône */
+  height: auto; /* Hauteur automatique pour maintenir les proportions */
+}

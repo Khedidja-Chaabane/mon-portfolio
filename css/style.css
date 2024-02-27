@@ -11,7 +11,8 @@ main{
   border-bottom: 1px solid;
 }
 .nav-link{
-font-weight: bold;}
+font-weight: bold;
+}
 .nav-link:hover{
   color: red;
   text-shadow: 1px 1px 1px black;
@@ -69,16 +70,19 @@ header {
 
 .header-image h2 {
   margin: 0;
-  font-size: 30px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
+  color: cadetblue;
 }
 
 .header-image p {
   margin: 0;
-  font-size: 20px;
+  font-size: 30px ;
 }
-
+.header-image span {
+  font-size:20px ;
+}
 .header-content {
   max-width: 800px;
   margin: 0 auto;
@@ -88,24 +92,49 @@ header {
 .about {
   font-size: 16px;
   color: #333;
-  margin-top: 20px;
+  margin: 20px 20px;
   box-shadow: 2px 2px 2px gray;
+  line-height: 30px;
 }
+.lang{
+    margin:  auto;
+    padding: 15px;
+    background-color: rgb(227, 227, 135);
+    box-shadow: 2px 2px 2px gray;
+    border-radius: 10px;
 
+}
+.lang h6{
+  line-height: 40px;
+}
 .interests {
-  margin: 20px auto;
+  margin:  auto;
   padding: 15px;
-  background-color: #ffffff;
+  background-color: rgb(227, 227, 135);
   box-shadow: 2px 2px 2px gray;
-border-radius: 10px;
+  border-radius: 10px;
 }
 
+
+.interests div h6 {
+  margin: 10px; 
+  font-weight: bolder;
+  line-height: 40px;
+}
 
 /* ////////////////////////// */
-h4 , h5 {
-  font-size: 1.5rem; 
+h4 {
+  font-size: 2rem; 
   font-weight: bold; 
-  color: cornflowerblue;
+  color: rgb(72, 132, 244);
+  text-shadow: 2px 2px 2px rgb(14, 14, 14);
+margin: 5px auto 10px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h5{
+  font-size: 1.8rem; 
+  font-weight: bold; 
+  color: rgb(42, 97, 191);
   text-shadow: 2px 2px 2px rgb(14, 14, 14);
 margin: 5px auto 10px;
   font-family: cursive;

@@ -90,22 +90,31 @@ header {
 
 
 .about {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   margin: 20px 20px;
   box-shadow: 2px 2px 2px gray;
   line-height: 30px;
 }
+.important{
+  font-weight: bolder;
+}
 .lang{
     margin:  auto;
     padding: 15px;
-    background-color: rgb(227, 227, 135);
+    background-color: rgb(247, 247, 207);
     box-shadow: 2px 2px 2px gray;
     border-radius: 10px;
 
 }
-.lang h6{
+.lang li{
   line-height: 40px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.lang p{
+  line-height: 40px ;
+  font-size: 15px;
 }
 .interests {
   margin:  auto;

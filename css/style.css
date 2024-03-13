@@ -117,9 +117,9 @@ header {
   font-size: 15px;
 }
 .interests {
-  margin:  auto;
+  margin:  20px 20px 20px;
   padding: 15px;
-  background-color: rgb(227, 227, 135);
+  background-color: pink;
   box-shadow: 2px 2px 2px gray;
   border-radius: 10px;
 }
@@ -243,13 +243,20 @@ background-color: #f2f2f2;
 }
   /* CONTACT */
   /* Centrer l'iframe */
-.iframe-container {
-  background-color: #f2f2f2;
+.contact {
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Occuper toute la hauteur de la vue */
+  margin: 20px 20px 20px ;
+}
+.contact img{
+  height: 40px;
+  width: 40px;
+}
+.contact h5{
+  color: red;
+}
+.coordo{
+  font-size: 20px;
+  color: rgb(5, 5, 91);
 }
 
 /* Rendre l'iframe responsif */

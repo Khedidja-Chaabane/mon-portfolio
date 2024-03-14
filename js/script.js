@@ -19,7 +19,7 @@ function typeWriterEffect(element, text, speed) {
   const typedTextElement = document.getElementById('typed-text');
   
   // Le texte 
-  const textToType = "Bienvenue sur mon portfolio";
+  const textToType = "😊 Bienvenue sur mon portfolio 💻";
   
   // Vitesse 
   const typingSpeed = 80;

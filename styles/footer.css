@@ -1,0 +1,21 @@
+/* Footer */
+/* Styliser les icônes sociales */
+footer {
+    border-top: 1px solid;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    /* Espacement entre les icônes */
+    justify-content: center;
+    /* Centrer horizontalement */
+    margin-top: 20px;
+  }
+  
+  .social-icons a img {
+    max-width: 30px;
+    height: auto;
+    border-radius: 10px;
+  }
+  

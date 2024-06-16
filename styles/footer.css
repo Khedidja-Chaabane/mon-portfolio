@@ -2,6 +2,8 @@
 /* Styliser les icônes sociales */
 footer {
     border-top: 1px solid;
+    height: 100px;
+    
   }
   
   .social-icons {

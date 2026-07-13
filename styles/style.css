@@ -13,83 +13,156 @@ h1{
   margin: 10px auto;
 }
 /* STYLE PAGE ACCEUIL */
-.hero {
-  height: 1000px;
-  width: 100%;
-  background-image: url("../images/fond7.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    background-image:url("../images/mejuly26.jpg");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.55) 0%,
+        rgba(0,0,0,.35) 45%,
+        rgba(0, 0, 0, 0.263) 100%
+    );
+}
+
+.hero-overlay{
+    position:relative;
+    z-index:2;
+    margin-left:8%;
+    color:white;
 }
 .h1-container{
-  max-width: 80%;
-  padding: 10px;
-  margin: 20px auto;
+    min-height:180px;
+    display:flex;
+    align-items:center;
+}
 
+#typed-text{
+    background:none;
+    filter:none;
+    color:white;
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    font-weight:700;
+    line-height:1.2;
+    display:block;
+    min-height:120px;
 }
-#typed-text {
-  background-color: rgba(239, 231, 231, 0.127);
-  filter: drop-shadow(0 0 5px #f5f2f2);
-  color: black;
-  font-size: 45px;
-  border-radius: 20px;
+.hero-text{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin:25px 0 40px;
+    max-width:550px;
 }
-/* --------------------------------------- */
-/* ABOUT */
+.hero-tag{
+    display:inline-block;
+    margin-bottom:20px;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    font-size:.9rem;
+}
+.hero-name{
+    font-size:3rem;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:15px;
+}
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    padding:12px 28px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+/* =======================================
+            ABOUT
+======================================= */
+
 .main-about{
-  width: 100%;
-  background-image: url("../images/fond6.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container-about{
-  margin: 20px auto;
-  padding: 5px;
-  background-color: rgba(211, 211, 211, 0.214);
-  
-}
-.card-about {
-  width: 300px;
-  padding: 5px;
-    padding: 5px;
-  margin: 20px auto;
+    background:#f8f9fa;
 }
 
-.card-about img{
-  border-radius: 50%;
-  width: 200px;
-  margin: auto;
-  filter: drop-shadow(0 0 5px #0e0d0d);
-}
-.card-about h2 {
-  font-size: 30px;
-  color: rgba(90, 90, 194, 0.974);
-}
-.card-about p{
-  font-size: 15px;
+/* Sections */
+
+.main-about section{
+    padding-top:3rem;
+    padding-bottom:3rem;
 }
 
-.about-content {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 5px;
-  filter: drop-shadow(0 0 5px #0e0d0d);
+/* Images */
+
+.main-about img{
+    transition:.3s ease;
 }
-.about-content-card{
-  padding: 5px;
+
+.main-about img:hover{
+    transform:scale(1.02);
 }
-.important {
-  font-weight: bolder;
+
+/* Titres */
+
+.main-about h1{
+    font-weight:700;
 }
-.p-about{
-  margin: 10px 10px;
+
+.main-about h2{
+    font-weight:600;
+    margin-bottom:1.5rem;
 }
+
+.main-about p{
+    text-align:justify;
+    line-height:1.8;
+}
+
+/* Cartes */
+
+.value-card,
+.card{
+
+    border:none;
+    border-radius:15px;
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+    transition:.3s;
+
+}
+
+/* Bouton */
+
+.main-about .btn{
+
+    border-radius:50px;
+    padding:.75rem 2rem;
+    font-weight:600;
+
+}
+
+
 /* ----------------------- */
 /* Compétences */
 .main-skills{
@@ -97,19 +170,50 @@ h1{
   padding: 10px;
 }
 .main-skills h1{
-  margin: 20px auto;
+    font-weight:700;
+    color:#1f2937;
 }
-.accordion{
-  margin: 20px auto;
-  max-width: 90%;
-  filter: drop-shadow(0 0 5px #0e0d0d);
+
+.main-skills .intro-skills{
+
+    max-width:700px;
+    line-height:1.8;
+    color:#6c757d;
+
 }
-.accordion-header button{
-  color: black;
-  font-weight: bolder;
+
+.main-skills .btn{
+
+    border-radius:50px;
+    padding:.8rem 2rem;
+    font-weight:600;
+
 }
-.cv{
-  margin: 10px auto;
+.accordion-item{
+
+    border:none;
+    border-radius:15px !important;
+    overflow:hidden;
+
+}
+
+.accordion-button{
+
+    font-weight:600;
+
+}
+
+.accordion-body{
+
+    line-height:1.8;
+
+}
+
+.badge{
+
+    padding:.6rem .9rem;
+    font-size:.9rem;
+
 }
 /* -------------------------- */
 /* EXPERIENCES */

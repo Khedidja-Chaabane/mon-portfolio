@@ -1,27 +1,46 @@
-/* Footer */
-/* Styliser les icônes sociales */
-footer {
-  height: 150px;
-    width: 100%; /* Prendre toute la largeur */
-  background-color: #333; /* Couleur de fond */
-  color: #fff; /* Couleur du texte */
-  text-align: center; /* Centrer le texte */
-  padding: 20px ; /* Ajouter du padding en haut et en bas */
-}  
-  /* Styles pour les icônes sociales */
-.social-icons {
-  display: flex; /* Utiliser Flexbox pour aligner les icônes */
-  justify-content: center; /* Centrer les icônes */
-  gap: 10px; /* Espacement entre les icônes */
-  margin: 10px auto; /* Ajouter un peu d'espace en bas */
+footer{
+
+    background:#212529;
+    color:white;
+
+    text-align:center;
+
+    padding:2rem 1rem;
+
 }
- 
-  .social-icons a img {
-    max-width: 30px;
-    height: auto;
-    border-radius: 10px;
-  }
-  .copy{
-    margin: 10px auto;
-    padding: 10px;
-  }
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+}
+
+.social-icons img{
+
+    width:34px;
+
+    transition:.3s;
+
+}
+
+.social-icons img:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.copy{
+
+    margin:0;
+
+    color:#adb5bd;
+
+    font-size:.9rem;
+
+}

@@ -17,7 +17,7 @@ h1{
 
 .hero{
     min-height:100vh;
-    background-image:url("../images/mejuly26.jpg");
+    background-image:url("/images/mejuly26.jpg");
     background-size:cover;
     background-position:center;
     position:relative;

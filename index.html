@@ -2,6 +2,84 @@
 <html lang="fr">
 
 <head>
+  <!-- CMP -->
+   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #533BE2;
+  --backgroundColor: #FFFFFF;
+  --textColor: #4B494B;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #533BE2;
+  --iconBackgroundColor: #FFFFFF;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomLeft"
+  },
+  prompt: {
+    position: "center"
+  },
+  consentTypes: [
+    {
+      id: "cookies_essentiels",
+      label: "Cookies essentiels",
+      description: "<p>Ces cookies sont indispensables au bon fonctionnement du site. Ils permettent notamment d'assurer son fonctionnement et d'enregistrer vos préférences en matière de confidentialité. Ils ne peuvent pas être désactivés.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Cookies essentiels consent type here');
+      }
+    },
+    {
+      id: "analytics_mesure_d_audience",
+      label: "Analytics- Mesure d&#039;audience",
+      description: "<p class=\"MsoNormal\">Ces cookies nous permettent de mesurer l'audience du site,\nd'analyser la navigation des visiteurs et d'améliorer le contenu grâce à Google\nAnalytics.<o:p></o:p></p>",
+      required: false,
+      gtag: "analytics_storage"
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      description: "<p>Ces cookies sont utilisés pour proposer des contenus ou des publicités personnalisés et pour mesurer l'efficacité des campagnes marketing. Ils ne sont déposés qu'avec votre consentement.</p>",
+      required: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer son audience et améliorer votre expérience de navigation. Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.</span>",
+      acceptAllButtonText: "Tout accepter",
+      acceptAllButtonAccessibleLabel: "Accepter tous les cookies",
+      rejectNonEssentialButtonText: "Tout refuser",
+      rejectNonEssentialButtonAccessibleLabel: "Refuser les cookies non essentiels",
+      preferencesButtonText: "Personnaliser",
+      preferencesButtonAccessibleLabel: "Modifier les préférences des cookies"
+    },
+    preferences: {
+      title: "Personnalisez vos préférences de cookies",
+      description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous respectons votre vie privée. Vous pouvez choisir d'accepter ou de refuser certaines catégories de cookies. Vos préférences seront enregistrées et appliquées lors de votre navigation sur ce site.</span>",
+      saveButtonText: "Enregistrer mes choix",
+      saveButtonAccessibleLabel: "Enregistrer vos préférences de cookies",
+      creditLinkText: "Créer cette bannière gratuitement",
+      creditLinkAccessibleLabel: "Découvrir Silktide et créer cette bannière gratuitement"
+    }
+  }
+});
+</script>
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {

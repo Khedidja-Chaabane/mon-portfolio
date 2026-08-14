@@ -3,90 +3,100 @@
 
 <head>
   <!-- CMP -->
-   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
-<style id="silktide-consent-manager-overrides">
-#stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #533BE2;
-  --backgroundColor: #FFFFFF;
-  --textColor: #4B494B;
-  --backdropBackgroundColor: #00000033;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #533BE2;
-  --iconBackgroundColor: #FFFFFF;
-}
-</style>
-<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
-<script>
-window.silktideConsentManager.init({
-  backdrop: {
-    show: false
-  },
-  icon: {
-    position: "bottomLeft"
-  },
-  prompt: {
-    position: "center"
-  },
-  consentTypes: [
-    {
-      id: "cookies_essentiels",
-      label: "Cookies essentiels",
-      description: "<p>Ces cookies sont indispensables au bon fonctionnement du site. Ils permettent notamment d'assurer son fonctionnement et d'enregistrer vos préférences en matière de confidentialité. Ils ne peuvent pas être désactivés.</p>",
-      required: true,
-      onAccept: function() {
-        console.log('Add logic for the required Cookies essentiels consent type here');
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+  <style id="silktide-consent-manager-overrides">
+    #stcm-wrapper {
+      --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+      --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+      --primaryColor: #533BE2;
+      --backgroundColor: #FFFFFF;
+      --textColor: #4B494B;
+      --backdropBackgroundColor: #00000033;
+      --backdropBackgroundBlur: 0px;
+      --iconColor: #533BE2;
+      --iconBackgroundColor: #FFFFFF;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+  <script>
+    window.silktideConsentManager.init({
+      backdrop: {
+        show: false
+      },
+      icon: {
+        position: "bottomLeft"
+      },
+      prompt: {
+        position: "center"
+      },
+      consentTypes: [{
+          id: "cookies_essentiels",
+          label: "Cookies essentiels",
+          description: "<p>Ces cookies sont indispensables au bon fonctionnement du site. Ils permettent notamment d'assurer son fonctionnement et d'enregistrer vos préférences en matière de confidentialité. Ils ne peuvent pas être désactivés.</p>",
+          required: true,
+          onAccept: function() {
+            console.log('Add logic for the required Cookies essentiels consent type here');
+          }
+        },
+        {
+          id: "analytics_mesure_d_audience",
+          label: "Analytics- Mesure d&#039;audience",
+          description: "<p class=\"MsoNormal\">Ces cookies nous permettent de mesurer l'audience du site,\nd'analyser la navigation des visiteurs et d'améliorer le contenu grâce à Google\nAnalytics.<o:p></o:p></p>",
+          required: false,
+          gtag: "analytics_storage"
+        },
+        {
+          id: "marketing",
+          label: "Marketing",
+          description: "<p>Ces cookies sont utilisés pour proposer des contenus ou des publicités personnalisés et pour mesurer l'efficacité des campagnes marketing. Ils ne sont déposés qu'avec votre consentement.</p>",
+          required: false,
+          gtag: [
+            "ad_storage",
+            "ad_user_data",
+            "ad_personalization"
+          ]
+        }
+      ],
+      text: {
+        prompt: {
+          description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer son audience et améliorer votre expérience de navigation. Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.</span>",
+          acceptAllButtonText: "Tout accepter",
+          acceptAllButtonAccessibleLabel: "Accepter tous les cookies",
+          rejectNonEssentialButtonText: "Tout refuser",
+          rejectNonEssentialButtonAccessibleLabel: "Refuser les cookies non essentiels",
+          preferencesButtonText: "Personnaliser",
+          preferencesButtonAccessibleLabel: "Modifier les préférences des cookies"
+        },
+        preferences: {
+          title: "Personnalisez vos préférences de cookies",
+          description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous respectons votre vie privée. Vous pouvez choisir d'accepter ou de refuser certaines catégories de cookies. Vos préférences seront enregistrées et appliquées lors de votre navigation sur ce site.</span>",
+          saveButtonText: "Enregistrer mes choix",
+          saveButtonAccessibleLabel: "Enregistrer vos préférences de cookies",
+          creditLinkText: "Créer cette bannière gratuitement",
+          creditLinkAccessibleLabel: "Découvrir Silktide et créer cette bannière gratuitement"
+        }
       }
-    },
-    {
-      id: "analytics_mesure_d_audience",
-      label: "Analytics- Mesure d&#039;audience",
-      description: "<p class=\"MsoNormal\">Ces cookies nous permettent de mesurer l'audience du site,\nd'analyser la navigation des visiteurs et d'améliorer le contenu grâce à Google\nAnalytics.<o:p></o:p></p>",
-      required: false,
-      gtag: "analytics_storage"
-    },
-    {
-      id: "marketing",
-      label: "Marketing",
-      description: "<p>Ces cookies sont utilisés pour proposer des contenus ou des publicités personnalisés et pour mesurer l'efficacité des campagnes marketing. Ils ne sont déposés qu'avec votre consentement.</p>",
-      required: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
-    }
-  ],
-  text: {
-    prompt: {
-      description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer son audience et améliorer votre expérience de navigation. Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.</span>",
-      acceptAllButtonText: "Tout accepter",
-      acceptAllButtonAccessibleLabel: "Accepter tous les cookies",
-      rejectNonEssentialButtonText: "Tout refuser",
-      rejectNonEssentialButtonAccessibleLabel: "Refuser les cookies non essentiels",
-      preferencesButtonText: "Personnaliser",
-      preferencesButtonAccessibleLabel: "Modifier les préférences des cookies"
-    },
-    preferences: {
-      title: "Personnalisez vos préférences de cookies",
-      description: "<span style=\"color: rgb(57, 67, 76); letter-spacing: 0.34px;\">Nous respectons votre vie privée. Vous pouvez choisir d'accepter ou de refuser certaines catégories de cookies. Vos préférences seront enregistrées et appliquées lors de votre navigation sur ce site.</span>",
-      saveButtonText: "Enregistrer mes choix",
-      saveButtonAccessibleLabel: "Enregistrer vos préférences de cookies",
-      creditLinkText: "Créer cette bannière gratuitement",
-      creditLinkAccessibleLabel: "Découvrir Silktide et créer cette bannière gratuitement"
-    }
-  }
-});
-</script>
+    });
+  </script>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WW9M9T6K');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WW9M9T6K');
+  </script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/logo.png">
@@ -109,9 +119,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW9M9T6K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WW9M9T6K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Barre de navigation -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -122,7 +131,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarMenu">
-<ul class="navbar-nav ms-auto align-items-lg-center">          <li class="nav-item">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
             <a id="nav-home" class="nav-link" href="index.html">Accueil</a>
           </li>
           <li class="nav-item">
@@ -223,6 +233,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Skills Only</h6>
+                <p class="card-text">Application mobile IOS | Projet de groupe </p>
+                <a href="https://gitlab.com/EquiTeamAFP/skillsonly" target="_blank">
+                  <img src="images/SkillsOnly.jpeg" alt="SkillsOnly" class="img-fluid flex-grow-1">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body d-flex flex-column">
                 <h6 class="card-title">Dil Se</h6>
                 <p class="card-text">Site web d'association</p>
                 <a href="https://khedidja-chaabane.github.io/asso/" target="_blank">
@@ -235,8 +256,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
                 <h6 class="card-title">Horizon partagé</h6>
-                <p class="card-text">Site web d'association</p>
-                <a href="https://www.main-bvxea6i-sv6yfysbzobja.fr-3.platformsh.site/" target="_blank">
+                <p class="card-text">Site web d'association réalisé avec Symfony</p>
+                <a href="https://github.com/Khedidja-Chaabane/horizon-partage-symfony" target="_blank">
                   <img src="images/horizon.png" alt="horizon partagé" class="img-fluid flex-grow-1">
                 </a>
               </div>
@@ -256,9 +277,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Site Web Créé pour un Électricien | Projet de Stage</h6>
-                <p class="card-text">Réalisé pendant mon stage de 10 jours en formation en tant que
-                  développeur web.</p>
+                <h6 class="card-title">ELECA9</h6>
+                <p class="card-text">Réalisé pour un Électricien avec
+                  avec Symfony</p>
+
                 <div class="embed-responsive embed-responsive-16by9 flex-grow-1">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zYWOFRBXcNk?si=MNuHar-BACAutEog" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
@@ -281,7 +303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
                 <h6 class="card-title">ELECA9</h6>
-                <p class="card-text">Réalisé pour un Électricien</p>
+                <p class="card-text">Réalisé pour un Électricien sous WordPress</p>
                 <a href="https://www.eleca9.com/" target="_blank">
                   <img src="images/eleca9.png" alt="eleca9" class="img-fluid flex-grow-1">
                 </a>
@@ -293,7 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
                 <h6 class="card-title">Site de bijouterie</h6>
-                <p class="card-text">Réalisé avec Symfony.</p>
+                <p class="card-text">Réalisé avec Symfony | Apprentissage</p>
                 <div class="embed-responsive embed-responsive-16by9 flex-grow-1">
                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GUtzCfNA8QQ?si=TNbm_J-6VcJPU_xG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
@@ -319,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://www.youtube.com/channel/UCjI69ENpWezrZF2IiSH46gw" target="_blank">
         <img src="images/youtube.png" alt="youtube">
       </a>
-      
+
 
     </div>
     <p class="copy">&copy; 2023 |Khedidja Chaabane ~ Tous droits réservés.</p>
